@@ -1,0 +1,27 @@
+# Python environments and build output (recreated per machine — never commit)
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Secrets and private configuration. The studio root lives outside this repository.
+.env
+.env.*
+*.token
+.claude/settings.json
+
+# No private or generated audio belongs in Git (AGENTS.md, Narrator Voice v1 scope)
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Isolated Git worktrees and agent execution ledgers (local scratch)
+.worktrees/
+.superpowers/
+
+# OS / editor cruft
+.DS_Store
