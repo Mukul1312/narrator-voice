@@ -19,9 +19,9 @@
 ## 1. Context
 
 Two pipelines are live in the tree and each has produced real output:
-[`scripts/ggsm_transcription/`](../../scripts/ggsm_transcription/) (2,984 lines) and
-[`scripts/youtube_enhance/`](../../scripts/youtube_enhance/) (8,163 lines, of which
-[`cli.py`](../../scripts/youtube_enhance/cli.py) is 2,682). Both are being restructured
+[`scripts/ggsm_transcription/`](https://github.com/Mukul1312/voice-cloning/tree/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/ggsm_transcription) (2,984 lines) and
+[`scripts/youtube_enhance/`](https://github.com/Mukul1312/voice-cloning/tree/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/youtube_enhance) (8,163 lines, of which
+[`cli.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/youtube_enhance/cli.py) is 2,682). Both are being restructured
 under [ADR-0004](0004-clean-room-rewrite-with-cutover.md). The steward asked for both,
 and how to do both is this record.
 

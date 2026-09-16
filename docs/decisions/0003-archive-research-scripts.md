@@ -27,7 +27,7 @@ so without a decision they stay in the reading path indefinitely.
 Git history cannot be used to sort them. Commit `88d3470` — *"feat: publish source-only
 audio workflows (#1)"*, 2026-08-24 — changed **147 files in one commit**, so "recently
 modified" is meaningless here. Only
-[`odia_transcript_index.py`](../../scripts/odia_transcript_index.py) (`f8a66b6`,
+[`odia_transcript_index.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/odia_transcript_index.py) (`f8a66b6`,
 2026-08-27) has a genuine recent individual commit. **The census below was done by
 reading imports and documents, not by date.**
 
@@ -54,16 +54,16 @@ Two are **hard module-level dependencies of the production packages** — the on
 
 | Script | Lines | Why it is live |
 |---|---:|---|
-| [`enhance_diagnose.py`](../../scripts/enhance_diagnose.py) | 377 | `youtube_enhance/diagnostics.py:22` — module-level `from scripts import enhance_diagnose as legacy_diagnostics`; 7 distinct functions across 8 call sites at `:221–257` |
-| [`voice_quality.py`](../../scripts/voice_quality.py) | 163 | `youtube_enhance/gates.py:14` — module-level `from scripts.voice_quality import vq_feats`, called at `gates.py:256`. `gates.py` is the fail-closed objective veto |
-| [`repo_paths.py`](../../scripts/repo_paths.py) | 17 | Imported by 16 scripts — exactly the sixteen in §3.2 — and by `tests/test_legacy_script_paths.py:30` |
-| [`enhance_youtube_lecture.py`](../../scripts/enhance_youtube_lecture.py) | 12 | Subprocess-invoked as a real test at `tests/youtube_enhance/test_cli.py:79` |
-| [`odia_transcript_index.py`](../../scripts/odia_transcript_index.py) | 165 | Programme 1 (daily). Named twice in `odia-dual-output-system-design-2026-08-28.md` (`:229`, `:251`) and shipped as AMENDMENT A6 item 5 |
-| [`fetch_idt.py`](../../scripts/fetch_idt.py) | 126 | Programme 1. Named as *next action item (3)* in the corrections doc, with a live bug at `:43` — **"It cannot enumerate the Odia corpus as written."** |
-| [`analyze_source.py`](../../scripts/analyze_source.py) | 72 | Programmes 1–2. One of three tools named as "doing most of this" for intake stratification |
-| [`spectral_inspect.py`](../../scripts/spectral_inspect.py) | 137 | Programme 1, same triage sentence |
-| [`build_odia_check_site.py`](../../scripts/build_odia_check_site.py) | 276 | Programme 2's only instrument for its human quality gate. The evaluator does not speak Odia, and `odia-asr-and-intelligibility-metrics-2026-07-31.md` closed off the two substitutes actually proposed — ASR round-trip WER and intrusive metrics (STOI/ESTOI/SIIB) — while leaving SRMR-CI uninvestigated. `site-odia-check/README.md` carries a present-tense instruction to run it |
-| [`hi/build_casting_site.py`](../../scripts/hi/build_casting_site.py) | 206 | Programme 5, expected within 1–2 months of 2026-08-26. `site-casting/README.md` carries a present-tense run instruction *word-for-word the same shape* as `site-odia-check/README.md`. Identical evidence to the row above; treating the two differently would be indefensible. Costs are asymmetric — wrongly archiving it costs friction at the moment programme 5 starts, wrongly keeping it costs one file |
+| [`enhance_diagnose.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/enhance_diagnose.py) | 377 | `youtube_enhance/diagnostics.py:22` — module-level `from scripts import enhance_diagnose as legacy_diagnostics`; 7 distinct functions across 8 call sites at `:221–257` |
+| [`voice_quality.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/voice_quality.py) | 163 | `youtube_enhance/gates.py:14` — module-level `from scripts.voice_quality import vq_feats`, called at `gates.py:256`. `gates.py` is the fail-closed objective veto |
+| [`repo_paths.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/repo_paths.py) | 17 | Imported by 16 scripts — exactly the sixteen in §3.2 — and by `tests/test_legacy_script_paths.py:30` |
+| [`enhance_youtube_lecture.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/enhance_youtube_lecture.py) | 12 | Subprocess-invoked as a real test at `tests/youtube_enhance/test_cli.py:79` |
+| [`odia_transcript_index.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/odia_transcript_index.py) | 165 | Programme 1 (daily). Named twice in `odia-dual-output-system-design-2026-08-28.md` (`:229`, `:251`) and shipped as AMENDMENT A6 item 5 |
+| [`fetch_idt.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/fetch_idt.py) | 126 | Programme 1. Named as *next action item (3)* in the corrections doc, with a live bug at `:43` — **"It cannot enumerate the Odia corpus as written."** |
+| [`analyze_source.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/analyze_source.py) | 72 | Programmes 1–2. One of three tools named as "doing most of this" for intake stratification |
+| [`spectral_inspect.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/spectral_inspect.py) | 137 | Programme 1, same triage sentence |
+| [`build_odia_check_site.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/build_odia_check_site.py) | 276 | Programme 2's only instrument for its human quality gate. The evaluator does not speak Odia, and `odia-asr-and-intelligibility-metrics-2026-07-31.md` closed off the two substitutes actually proposed — ASR round-trip WER and intrusive metrics (STOI/ESTOI/SIIB) — while leaving SRMR-CI uninvestigated. `site-odia-check/README.md` carries a present-tense instruction to run it |
+| [`hi/build_casting_site.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/hi/build_casting_site.py) | 206 | Programme 5, expected within 1–2 months of 2026-08-26. `site-casting/README.md` carries a present-tense run instruction *word-for-word the same shape* as `site-odia-check/README.md`. Identical evidence to the row above; treating the two differently would be indefensible. Costs are asymmetric — wrongly archiving it costs friction at the moment programme 5 starts, wrongly keeping it costs one file |
 
 **That the two production packages import loose scripts at module level is itself a
 finding.** The packages are not cleanly separable from `scripts/` today, which is why
@@ -92,10 +92,10 @@ the 2026-07-10 pivot as *"superseded … Runnable history"*.
 
 **Both judgement calls are now decided** (2026-08-29):
 
-- [`build_graveness.py`](../../scripts/build_graveness.py) (163) — **archives.** Imported
+- [`build_graveness.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/build_graveness.py) (163) — **archives.** Imported
   by `voice_quality.py:133` but **only inside `_selftest()`**, so the live `vq_feats` path
   does not pull it. Flagged originally because it greps as a transitive dependency.
-- [`hi/build_casting_site.py`](../../scripts/hi/build_casting_site.py) (206) — **stays
+- [`hi/build_casting_site.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/hi/build_casting_site.py) (206) — **stays
   live**, promoted to §3.1. See that row for the reasoning.
 
 ### 3.3 The remainder — 85 files, 12,819 lines

@@ -7,21 +7,21 @@ supersedes it, and the older file gets a `Superseded by:` line pointing forward.
 is in-place revision: the AMENDMENT was appended to
 [`2026-08-26-corpus-ledger-domain-design.md`](../superpowers/specs/2026-08-26-corpus-ledger-domain-design.md)
 and the superseded-claims banner was inserted at the top of
-[`odia-dual-output-system-design-2026-08-28.md`](../odia-dual-output-system-design-2026-08-28.md)
+[`odia-dual-output-system-design-2026-08-28.md`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/docs/odia-dual-output-system-design-2026-08-28.md)
 — both are the original file being edited. Those documents are the model for the
 *tone* of a supersession here (surgical, itemised, nothing deleted quietly), not for
 its mechanism.
 
 **Naming:** `NNNN-slug.md`, four digits from `0001`, never reused, never renumbered.
 Cite in prose as `ADR-0004` — distinct from the `D7`-style rows local to
-[`docs/aws-evaluation/`](../aws-evaluation/). The date lives in the header, not the
+[`docs/aws-evaluation/`](https://github.com/Mukul1312/voice-cloning/tree/4b2b4edbe84845d7682c91f68ece183b31df5f5c/docs/aws-evaluation). The date lives in the header, not the
 filename: the first four records share a date, so a date suffix would carry no
 information across them.
 
 **Why `docs/decisions/` and not `docs/adr/`:** this repository does not abbreviate in
 paths (`aws-evaluation`, `superpowers/specs`, `heritage_production`, `youtube_enhance`),
 and it already reached for this word on its own in
-[`06-decisions-and-open-questions.md`](../aws-evaluation/06-decisions-and-open-questions.md).
+[`06-decisions-and-open-questions.md`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/docs/aws-evaluation/06-decisions-and-open-questions.md).
 Not under `docs/superpowers/` because an ADR must be able to supersede a spec in that
 tree, which is awkward from inside it, and because records should stay findable by
 someone who never runs that workflow.

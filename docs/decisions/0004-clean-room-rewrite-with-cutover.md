@@ -20,10 +20,10 @@ the flows across). **The steward chose clean-room, with the concern below record
 in view.**
 
 The maintainability complaint is well-founded and measured:
-[`youtube_enhance/cli.py`](../../scripts/youtube_enhance/cli.py) is 2,682 lines of
+[`youtube_enhance/cli.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/youtube_enhance/cli.py) is 2,682 lines of
 transaction script over a 38-line anemic
-[`models.py`](../../scripts/youtube_enhance/models.py);
-[`ggsm_transcription/store.py`](../../scripts/ggsm_transcription/store.py) is 717 lines
+[`models.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/youtube_enhance/models.py);
+[`ggsm_transcription/store.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/scripts/ggsm_transcription/store.py) is 717 lines
 in which the `_NEXT_STAGE` state machine — the core business rule — sits at line 42, in
 the same module as `os.replace`, `stat`, `tempfile` and `PureWindowsPath`; and 12,656
 lines of one-off research scripts sit in the same reading path, 14,400 counting the

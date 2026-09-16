@@ -15,14 +15,14 @@ A clean-room DDD rewrite is starting ([ADR-0004](0004-clean-room-rewrite-with-cu
 `src/heritage_production/` holds **14,634 lines** of Python across 59 files, with
 **20,045 lines** of tests — **34,679 lines** in total, roughly three times the size of
 all live production code. It is shelved: nothing under `scripts/`, `cloud/` or `colab/`
-imports it, and its CLI at [`presentation/cli/main.py`](../../src/heritage_production/presentation/cli/main.py)
+imports it, and its CLI at [`presentation/cli/main.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/src/heritage_production/presentation/cli/main.py)
 is 62 lines of subcommands that parse arguments and return 0.
 
 The question this record answers is narrow: **what carries across into the new package,
 and what stays where it is.**
 
 Its own disposition document,
-[`SHELVED.md`](../../src/heritage_production/SHELVED.md), already answers part of
+[`SHELVED.md`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/src/heritage_production/SHELVED.md), already answers part of
 this and names four unfreeze triggers. That file is cited here in preference to
 §12 of the [corpus-ledger spec](../superpowers/specs/2026-08-26-corpus-ledger-domain-design.md)
 wherever the two overlap, because it lives in the tree beside the code and declares
@@ -44,8 +44,8 @@ its own authority.
 2. **Carry over the architecture-test approach**, not the tests themselves — in two
    distinct kinds, because the reference codebase shows they are not the same thing:
    - **(a) Layering guards.** The AST-walking checks in
-     [`test_architecture.py`](../../tests/heritage_production/test_architecture.py) and
-     [`test_domain_import_boundaries.py`](../../tests/heritage_production/test_domain_import_boundaries.py)
+     [`test_architecture.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_architecture.py) and
+     [`test_domain_import_boundaries.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_domain_import_boundaries.py)
      — dependency direction, no third-party imports in domain, no cycles. These go in
      **first, before domain code**, and must exempt the composition root by name
      ([ADR-0005](0005-code-layout-rulebook.md) §5).
@@ -56,7 +56,7 @@ its own authority.
    `tests/youtube_enhance/test_digest_case.py`, which fails the build if
    `.hexdigest().upper()` returns.
 3. **Read the port shapes as reference; import none of them.**
-   [`application/ports/`](../../src/heritage_production/application/ports/) is a
+   [`application/ports/`](https://github.com/Mukul1312/voice-cloning/tree/4b2b4edbe84845d7682c91f68ece183b31df5f5c/src/heritage_production/application/ports) is a
    worked example of one repository port per aggregate root. It is a reading, not a
    dependency.
 4. **Everything else stays shelved**, unedited, with its four unfreeze triggers intact.
@@ -118,10 +118,10 @@ else**: `__future__`, `dataclasses`, `decimal`, `enum`, `hashlib`, `json`, `re`,
 by name in the firewall's own predicate.
 Zero third-party imports, enforced over the real tree by
 `test_domain_uses_only_standard_library_imports`
-([`test_architecture.py:145`](../../tests/heritage_production/test_architecture.py#L145))
+([`test_architecture.py:145`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_architecture.py#L145))
 against `sys.stdlib_module_names`. (Line 133 is that rule's own predicate test, which
 never opens a source file.) RFC 8785 canonicalization is hand-implemented in
-[`canonical.py`](../../src/heritage_production/domain/shared/canonical.py); `rfc8785`
+[`canonical.py`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/src/heritage_production/domain/shared/canonical.py); `rfc8785`
 appears only in tests, as an independent oracle.
 
 Identity is also the thing the two live flows have actually disagreed about — §4.1 of
@@ -142,7 +142,7 @@ produces. Rewriting it means rewriting the one solved problem in the area.
 - **`SHELVED.md` says "656 tests"; the source contains 655 `def test_`.** Both are
   right and this is not a defect. `unittest` collects 656; the extra is
   `ProductionApprovalStateMachine.TestCase.runTest`, synthesised by Hypothesis from
-  [`test_production_properties.py:79`](../../tests/heritage_production/test_production_properties.py#L79).
+  [`test_production_properties.py:79`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_production_properties.py#L79).
 - **`SHELVED.md`'s "roughly 55 seconds" is mis-scoped.** It covers the entire `tests/`
   tree, not this package's own suite, and Hypothesis settings make it machine- and
   seed-sensitive. On 2026-08-31, the exact measured repository-wide command,
@@ -181,9 +181,9 @@ That is why decision 1 drops the recorder rather than lifting it.
 ## 5. Consequences
 
 - **Six of the 655 test methods have the removed code as their whole subject**: `AssuranceTests`
-  ([`test_shared_refs.py:73`](../../tests/heritage_production/test_shared_refs.py#L73), 3)
+  ([`test_shared_refs.py:73`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_shared_refs.py#L73), 3)
   and `SharedTrustVocabularyTests`
-  ([`test_review_trust.py:45`](../../tests/heritage_production/test_review_trust.py#L45), 3).
+  ([`test_review_trust.py:45`](https://github.com/Mukul1312/voice-cloning/blob/4b2b4edbe84845d7682c91f68ece183b31df5f5c/tests/heritage_production/test_review_trust.py#L45), 3).
   `test_review_trust.py` already wraps part of its shared import in `try/except
   ImportError`, so it half-anticipates this split. A further 67 methods across 13 files
   reference the removed symbols incidentally; all sit in production, release and review
